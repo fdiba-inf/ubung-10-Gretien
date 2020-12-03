@@ -39,9 +39,9 @@ public class Rectangle extends Figure {
 
     @Override
     public boolean containsClick(Point click) {
-       boolean xinside (click.getX()>=startPoint.getX() && click.getX()<=startPoint.getX()+side2);
-       boolean yinside (click.getY()>=startPoint.getY() && click.getY()<=startPoint.getY()+side1);
-       if(xinside&&yinside == true){
+       boolean xinside = (click.getX()>=startPoint.getX() && click.getX()<=startPoint.getX()+side2);
+       boolean yinside = (click.getY()>=startPoint.getY() && click.getY()<=startPoint.getY()+side1);
+       if(xinside&&yinside){
          return true;
        }else{
         return false;
