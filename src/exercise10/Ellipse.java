@@ -40,7 +40,7 @@ public class Ellipse extends Figure {
     
     @Override
     public boolean containsClick(Point click) {
-        double solution = Math.pow((click.getx()-startPoint.getx()),2)/(side2*side2) + Maht.pow((click.gety()-startPoint.gety()),2)/(side1*side1);
+        double solution = Math.pow((click.getX()-startPoint.getX()),2)/(side2*side2) + Math.pow((click.getY()-startPoint.getY()),2)/(side1*side1);
         if(solution<=1) return true;
         return false;
     }
