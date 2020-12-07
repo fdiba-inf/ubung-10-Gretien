@@ -1,33 +1,29 @@
 package exercise10;
 
 public class Ellipse extends Figure {
-    private Point startPoint;
-    private double side2;
-    private double side1;
-
     public Ellipse() {
         super(new Point(0 ,0),1,1);
     }
 
-    public Ellipse(Point startPoint, double side2, double side1) {
-        super(new Point(startPoint), side2 ,side1);
+    public Ellipse(Point startPoint, double a, double b) {
+        super(new Point(startPoint), a ,b);
     }
   
     public Ellipse(Ellipse otherEllipse) {
-        super(new Point(otherEllipse.startPoint),otherEllipse.side2,otherEllipse.side1);
+        super(otherEllipse.startPoint,otherEllipse.side1,otherEllipse.side2);
        
     }
     @Override
     public double calculatePerimeter() {
-        return Math.PI * (3.0 * (side2 + side1) - Math.sqrt((3.0 * side2 + side1) * (side2 + 3.0 * side1)));
+        return Math.PI * (3.0 * (side1 + side2) - Math.sqrt((3.0 * side1 + side2) * (side1 + 3.0 * side2)));
     }
     @Override
     public double calculateArea() {
-        return Math.PI * side2 * side1;
+        return Math.PI * side1 * side2;
     }
    @Override
    public String getType() {
-        return (side2 == side1) ? "Circle" : "Ellipse";
+        return (side1 == side2) ? "Circle" : "Ellipse";
     }
    @Override 
    public boolean equal(Figure otherFigure) {
